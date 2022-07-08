@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 config();
 
-if (!process.env.DB_USER) config({ path: `../../.env` });
+if (!process.env.POSTGRES_DB) config({ path: `../../.env` });
 
 module.exports = {
   development: {
