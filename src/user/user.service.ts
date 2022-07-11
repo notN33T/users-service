@@ -57,7 +57,7 @@ export class UserService {
   async updateUser(updateUserDto: UpdateUserDto): Promise<any> {
     const { id, name, email, role, points } = updateUserDto;
     const roleString = role ? Role[role] : undefined;
-
+    console.log(roleString);
     const [candidateUser, candidateEmail] = await Promise.all([
       this.userModel.query().findById(id),
       this.userModel.query().findOne('email', `${email}`),

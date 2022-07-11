@@ -27,8 +27,7 @@ enum Role {
   ROLE_NONE_UNSPECIFIED = 0;
   SUPER_ADMIN = 1;
   ADMIN = 2;
-  PLAYER = 3;
-  USER = 4;
+  USER = 3;
 }
 
 message User {
