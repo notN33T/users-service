@@ -5,7 +5,7 @@ export class UserModel extends BaseModel {
   readonly email?: string;
   readonly password?: string;
   readonly role?: string;
-  readonly point?: number;
+  readonly points?: number;
 
   static get tableName() {
     return 'users';
