@@ -10,6 +10,11 @@ To run this project you'll need:
 * Run console command ```npm install``` from the root of repository
 * Run console command ```npm run start:dev``` for running application in dev, or ```npm run start:prod``` to run in production mode (without updates when code changed)
 
+### Technologies used in this project
+
+* [Nest.js](https://docs.nestjs.com) for microservice
+* [Objection](https://vincit.github.io/objection.js/) as ORM
+* [GRPC](https://docs.nestjs.com/microservices/grpc) as transporter
 
 ## GRPC methods
 
@@ -26,17 +31,17 @@ To run this project you'll need:
 3. CreateUser
 
 * Body of request should contain name, email, password
-* Body of response will contain status(SUCCESS or DENIED) and message
+* Body of response will contain status (SUCCESS or DENIED) and message
 
 4. DeleteUserById
 
 * Body of request should contain id (UUID or GUID in C#)
-* Body of response will contain status(SUCCESS or DENIED) and message
+* Body of response will contain status (SUCCESS or DENIED) and message
 
 5. UpdateUser
 
 * Body of request should contain id, and can contain one, one couple of next fields: email, password, role, name, points
-* Body of response will contain status(SUCCESS or DENIED) and message
+* Body of response will contain status (SUCCESS or DENIED) and message
 
 ### Tests
 
