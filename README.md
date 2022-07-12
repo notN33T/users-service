@@ -37,3 +37,7 @@ To run this project you'll need:
 
 * Body of request should contain id, and can contain one, one couple of next fields: email, password, role, name, points
 * Body of response will contain status(SUCCESS or DENIED) and message
+
+### Tests
+
+To run tests, run console command ```npm run test:e2e``` from the root of repository
