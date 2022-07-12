@@ -1,7 +1,7 @@
 
 # BGH users-service
 
-The service does all the work with the user entity
+This service implements operations with the user entity such as updating, creating, deleting, getting all or one user
 
 To run this project you'll need:
 
@@ -15,6 +15,7 @@ To run this project you'll need:
 * [Nest.js](https://docs.nestjs.com) for microservice
 * [Objection](https://vincit.github.io/objection.js/) as ORM
 * [GRPC](https://docs.nestjs.com/microservices/grpc) as transporter
+* [Postgresql](https://www.postgresql.org/docs/) as database
 
 ## GRPC methods
 
