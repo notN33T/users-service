@@ -62,4 +62,21 @@ describe('UserService', () => {
       message: 'User successfully updated',
     });
   });
+
+  it('It should test get user by email', async () => {
+    expect(
+      await userService.getUserByEmail({ email: 'testMail' }),
+    ).toBeDefined();
+    expect(
+      await userService.getUserByEmail({ email: 'testMail' }),
+    ).toStrictEqual({
+      status: Status.SUCCESS,
+      user: {
+        id: 'testId',
+        name: 'testName',
+        email: 'testMail',
+        password: 'testPassword',
+      },
+    });
+  });
 });

@@ -8,6 +8,7 @@ import { DeleteUserByIdDto } from './dto/deleteUserById.dto';
 import { UpdateUserDto } from './dto/updateUser.dto';
 import { Status } from './enums/status.enum';
 import { Role } from './enums/role.enum';
+import { GetUserByEmailDto } from './dto/getUserByEmail.dto';
 
 @Injectable()
 export class UserService {
@@ -23,6 +24,14 @@ export class UserService {
   async getUserById(getUserByIdDto: GetUserByIdDto): Promise<any> {
     const { id } = getUserByIdDto;
     const user = await this.userModel.query().findById(id);
+
+    if (!user) return { message: 'No such user', status: Status.DENIED };
+    return { user, status: Status.SUCCESS };
+  }
+
+  async getUserByEmail(getUserByEmailDto: GetUserByEmailDto): Promise<any> {
+    const { email } = getUserByEmailDto;
+    const user = await this.userModel.query().findOne('email', email);
 
     if (!user) return { message: 'No such user', status: Status.DENIED };
     return { user, status: Status.SUCCESS };

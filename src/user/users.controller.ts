@@ -5,6 +5,7 @@ import { CreateUserDto } from './dto/createUser.dto';
 import { UpdateUserDto } from './dto/updateUser.dto';
 import { GetUserByIdDto } from './dto/getUserById.dto';
 import { DeleteUserByIdDto } from './dto/deleteUserById.dto';
+import { GetUserByEmailDto } from './dto/getUserByEmail.dto';
 
 import { UserService } from './user.service';
 
@@ -35,5 +36,10 @@ export class UserController {
   @GrpcMethod('UserService', 'UpdateUser')
   async updateUser(updateUserDto: UpdateUserDto): Promise<any> {
     return this.userService.updateUser(updateUserDto);
+  }
+
+  @GrpcMethod('UserService', 'GetUserByEmail')
+  async getUserByEmail(getUserByEmailDto: GetUserByEmailDto): Promise<any> {
+    return this.userService.getUserByEmail(getUserByEmailDto);
   }
 }
